@@ -30,7 +30,7 @@ namespace Wpf_Lab_3
 
         private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            string fontName = ((sender as ComboBox).SelectedItem as TextBlock).Text;
+            string fontName = ((sender as ComboBox).SelectedItem as String);
             if (Vindou != null)
             {
                 Vindou.FontFamily = new FontFamily(fontName);
@@ -39,7 +39,7 @@ namespace Wpf_Lab_3
 
         private void ComboBox_SelectionChanged_1(object sender, SelectionChangedEventArgs e)
         {
-            string FontSize = ((sender as ComboBox).SelectedItem as TextBlock).Text;
+            string FontSize = ((sender as ComboBox).SelectedItem as String);
             double fontSize = double.Parse(FontSize);
             if (Vindou != null)
             {
