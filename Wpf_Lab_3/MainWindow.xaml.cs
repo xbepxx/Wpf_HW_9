@@ -41,6 +41,7 @@ namespace Wpf_Lab_3
                 uri=new Uri("BW.xaml", UriKind.Relative);
             }
             ResourceDictionary resource1 = Application.LoadComponent(uri) as ResourceDictionary;
+            Application.Current.Resources.Clear();
             Application.Current.Resources.MergedDictionaries.Add(resource1);
         }
         private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)

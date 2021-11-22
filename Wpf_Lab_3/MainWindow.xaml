@@ -38,7 +38,7 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
         <ComboBox x:Name="styleBox"/>
-        <Menu Margin="5" Padding="5" Grid.Row="1" >
+        <Menu Margin="5" Padding="5" Grid.Row="1" Style="{DynamicResource MenuStyle}">
             <MenuItem Header="_File" Style="{DynamicResource MenuItemStyle}">
                 <MenuItem Header="_Open" Command="ApplicationCommands.Open"/>
                 <MenuItem Header="_Save" Command="ApplicationCommands.Save"/>
@@ -46,8 +46,8 @@
                 <MenuItem Header="_Exit" Command="ApplicationCommands.Close"/>
             </MenuItem>
             </Menu>
-        <ToolBarTray Grid.Row="2" Grid.ColumnSpan="2">
-            <ToolBar Margin="5" Padding="5">
+        <ToolBarTray Grid.Row="2" Grid.ColumnSpan="2" Style="{DynamicResource ToolBarTrayStyle}">
+            <ToolBar Margin="5" Padding="5" Style="{DynamicResource ToolBarTrayStyle}">
                 <ComboBox Margin="5" Padding="5" Width="200" SelectionChanged="ComboBox_SelectionChanged" SelectedIndex="0" ItemsSource="{StaticResource Fronts}"/>
                 <!--<TextBlock Text="Arial" />
                     <TextBlock Text="Times New Roman"/>
@@ -59,7 +59,7 @@
                     <TextBlock Text="16"/>--><!--
                 </ComboBox>-->
             </ToolBar>
-            <ToolBar Margin="5" Padding="5">
+            <ToolBar Margin="5" Padding="5" Style="{DynamicResource ToolBarTrayStyle}">
                 <Button Click="Button_Click">
                     <Image Source="Pic/Bold.png" Height="50" Width="50"/>
                 </Button>
@@ -72,8 +72,8 @@
                     <Image Source="Pic/U.png" Height="50" Width="50"/>
                 </Button>
             </ToolBar>
-            <ToolBar Margin="5" Padding="5">
-                <StackPanel VerticalAlignment="Center">
+            <ToolBar Margin="5" Padding="5" Style="{DynamicResource ToolBarTrayStyle}">
+                <StackPanel VerticalAlignment="Center" Style="{DynamicResource StackPanelTrayStyle}">
                     <RadioButton Content="Black" IsChecked="True" Checked="RadioButton_Checked"/>
                     <RadioButton Content="Red" Checked="RadioButton_Checked_1"/>
                 </StackPanel>
