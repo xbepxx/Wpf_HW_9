@@ -7,14 +7,14 @@
         xmlns:sys="clr-namespace:System;assembly=mscorlib"
         xmlns:local="clr-namespace:Wpf_Lab_3"
         mc:Ignorable="d"
-        Title="Text" Height="450" Width="800">
+        Title="Text" Height="450" Width="800" Style="{DynamicResource WindowStyle}">
     <Window.CommandBindings>
         <CommandBinding Command="Open" Executed="OpenExecuted"/>
         <CommandBinding Command="Save" Executed="SaveExecuted"/>
         <CommandBinding Command="Close" Executed="CloseExecuted"/>
     </Window.CommandBindings>
-    <Window.Resources>
-        <!--<SolidColorBrush />-->
+    <!--<Window.Resources>
+        --><!--<SolidColorBrush />-->
         <!--<col:ArrayList x:Key="Fronts">
             <sys:String>Arial</sys:String>
             <sys:String>Times New Roman</sys:String>
@@ -24,8 +24,8 @@
             <sys:String>12</sys:String>
             <sys:String>14</sys:String>
             <sys:String>16</sys:String>
-        </col:ArrayList>-->
-    </Window.Resources>
+        </col:ArrayList>--><!--
+    </Window.Resources>-->
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="149*"/>
@@ -34,17 +34,19 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <Menu Margin="5" Padding="5">
-            <MenuItem Header="_File">
+        <ComboBox x:Name="styleBox"/>
+        <Menu Margin="5" Padding="5" Grid.Row="1" >
+            <MenuItem Header="_File" Style="{DynamicResource MenuItemStyle}">
                 <MenuItem Header="_Open" Command="ApplicationCommands.Open"/>
                 <MenuItem Header="_Save" Command="ApplicationCommands.Save"/>
                 <Separator/>
                 <MenuItem Header="_Exit" Command="ApplicationCommands.Close"/>
             </MenuItem>
             </Menu>
-        <ToolBarTray Grid.Row="1" Grid.ColumnSpan="2">
+        <ToolBarTray Grid.Row="2" Grid.ColumnSpan="2">
             <ToolBar Margin="5" Padding="5">
                 <ComboBox Margin="5" Padding="5" Width="200" SelectionChanged="ComboBox_SelectionChanged" SelectedIndex="0" ItemsSource="{StaticResource Fronts}"/>
                 <!--<TextBlock Text="Arial" />
@@ -77,6 +79,6 @@
                 </StackPanel>
             </ToolBar>
         </ToolBarTray>
-        <TextBox x:Name="Vindou" Grid.Row="2" Margin="5" Padding="5" FontSize="16" FontFamily="Arial" TextWrapping="Wrap" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="Vindou" Grid.Row="3" Margin="5" Padding="5" FontSize="16" FontFamily="Arial" TextWrapping="Wrap" Grid.ColumnSpan="2" Style="{DynamicResource TextBoxTrayStyle}"/>
     </Grid>
 </Window>
